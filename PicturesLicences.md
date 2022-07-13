@@ -1,4 +1,4 @@
-All picture come from wikipedia Hiragana/Katakana articles
+All pictures come from wikipedia Hiragana/Katakana articles
 
 https://en.wikipedia.org/wiki/Hiragana
 
