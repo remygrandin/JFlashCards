@@ -1,0 +1,381 @@
+\begin{filecontents}[overwrite]{avery5388.cfg}
+\newcommand{\cardpapermode}{portrait}
+\newcommand{\cardpaper}{a4paper}
+\newcommand{\cardrows}{4}
+\newcommand{\cardcolumns}{2}
+\setlength{\cardheight}{6.7cm}
+\setlength{\cardwidth}{9.5cm}
+\setlength{\topoffset}{1cm}
+\setlength{\oddoffset}{1cm}
+\setlength{\evenoffset}{1cm}
+\end{filecontents}
+
+\documentclass[avery5388,dvipsnames]{flashcards}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xeCJK}
+
+\setCJKmainfont{Noto Sans JP}
+
+\usepackage{fontspec}
+
+\newfontfamily\DoulosSIL{Doulos SIL}
+
+\newcommand{\titleCard}[3] {
+\cardfrontstyle[\fontsize{150}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{
+\fontsize{40}{50}\selectfont
+#1
+\\
+\smallskip
+\fontsize{25}{40}\selectfont
+#2
+}
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+\centering
+\vspace{2.7cm}
+\fontsize{15}{50}\selectfont
+#3
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newcommand{\emptyCard}[0] {
+\cardfrontstyle[]{empty}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{}
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newcommand{\jcard}[8] {
+\cardfrontstyle[\fontsize{150}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\centering
+\medskip
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\medskip
+\includegraphics[height=1.3cm]{#8}
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newcommand{\jcardDak}[8] {
+\cardfrontstyle[\fontsize{150}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\centering
+\medskip
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+%\itshape{Syllabary} & #3\\
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\bigskip
+\includegraphics[height=1.2cm]{#8} {\raise2ex\hbox{\fontsize{30}{10}\selectfont + ゛}}
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newcommand{\jcardHan}[8] {
+\cardfrontstyle[\fontsize{150}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\centering
+\medskip
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+%\itshape{Syllabary} & #3\\
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\bigskip
+\includegraphics[height=1.2cm]{#8} {\raise2ex\hbox{\fontsize{30}{10}\selectfont + ゜}}
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newcommand{\jcardYoon}[9] {
+\cardfrontstyle[\fontsize{125}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\centering
+\medskip
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+%\itshape{Syllabary} & #3\\
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\medskip
+\includegraphics[height=.7cm]{#8}
+\\
+\smallskip
+\includegraphics[height=.7cm]{#9}
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newcommand{\jcardYoonDak}[9] {
+\cardfrontstyle[\fontsize{125}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\centering
+\medskip
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+%\itshape{Syllabary} & #3\\
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\medskip
+\includegraphics[height=.7cm]{#8} {\raise1.7ex\hbox{\fontsize{15}{5}\selectfont + ゛}}
+\\
+\smallskip
+\includegraphics[height=.7cm]{#9}
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+
+\newcommand{\jcardYoonHan}[9] {
+\cardfrontstyle[\fontsize{125}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\centering
+\medskip
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+%\itshape{Syllabary} & #3\\
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\medskip
+\includegraphics[height=.7cm]{#8} {\raise1.7ex\hbox{\fontsize{15}{5}\selectfont + ゜}}
+\\
+\smallskip
+\includegraphics[height=.7cm]{#9}
+
+\end{tcolorbox}
+\end{flashcard}
+}
+
+\newtcbox{\badge}[1][red]{
+  on line, 
+  arc=1pt,
+  colback=#1,
+  colframe=#1,
+  fontupper=\color{white},
+  boxrule=0pt, 
+  boxsep=2pt,
+  left=2pt,
+  right=2pt,
+  top=2pt,
+  bottom=2pt
+}
+
+\newcommand{\sylHira}[0] {
+\badge[ForestGreen]{Hiragana}
+}
+
+\newcommand{\sylKata}[0] {
+\badge[Cyan]{Katakana\vphantom{Gojūon}}
+}
+
+\newcommand{\sylGojuon}[0] {
+\badge[Dandelion]{Gojūon}
+}
+
+\newcommand{\sylYoon}[0] {
+\badge[Peach]{Yōon\vphantom{Gojūon}}
+}
+
+\newcommand{\sylDak}[0] {
+\badge[NavyBlue]{Dakuten\vphantom{Gojūon}}
+}
+
+\newcommand{\sylHan}[0] {
+\badge[Red]{Handakuten\vphantom{Gojūon}}
+}
+
+\begin{document}
+
+\graphicspath{ {./hiragana/} }
+\input{hiragana.tex}
+
+\graphicspath{ {./katakana/} }
+\input{katakana.tex}
+
+\end{document}
+
