@@ -5,7 +5,7 @@ This is a set of flashcards to help learn Hiragana and Katakana.
 ![Exemple of cards](Extract.png)
 
 -----
-# [Download](flashcards.pdf)
+# [Download](https://github.com/remygrandin/JFlashCards/raw/main/flashcards.pdf)
 
 The structure and data is based on wikipedia articles on [Hiragana](https://en.wikipedia.org/wiki/Hiragana) & [Katakana](https://en.wikipedia.org/wiki/Katakana). It itegrate all in use gojūon & yōon with (han)dakuten variants.
 
