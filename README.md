@@ -13,7 +13,7 @@ I recommend printing it on hard paper to allow them to not be sturndy enough and
 
 Please note that **it may contain error**. If you find any, please kindly open an issue here.
 
-I'm in no way a japaneese instructor, only a french guy trying to learn :-)
+I'm in no way a japanese instructor, only a french guy trying to learn :-)
 
 ## Build requirement
 
