@@ -24,312 +24,47 @@
 
 \newfontfamily\DoulosSIL{Doulos SIL}
 
-\newcommand{\titleCard}[3] {
-\cardfrontstyle[\fontsize{150}{50}]{headings}
-\cardbackstyle{empty}
+\newcounter{cardNb}
+\setcounter{cardNb}{0}
 
-\begin{flashcard}[]{
-\fontsize{40}{50}\selectfont
-#1
-\\
-\smallskip
-\fontsize{25}{40}\selectfont
-#2
-}
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-\centering
-\vspace{2.7cm}
-\fontsize{15}{50}\selectfont
-#3
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 
-\end{tcolorbox}
-\end{flashcard}
+\newcommand*{\circled}[1]{\tikz[baseline=(char.base)]
+  \node[shape=circle,fill=yellow!20,draw,inner sep=2pt] (char) {#1};
 }
 
-\newcommand{\emptyCard}[0] {
-\cardfrontstyle[]{empty}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{}
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-\end{tcolorbox}
-\end{flashcard}
-}
-
-\newcommand{\jcard}[8] {
-\cardfrontstyle[\fontsize{150}{50}]{headings}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{#1}
-
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-
-\centering
-\medskip
-{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
-\medskip
-\hrule
-\smallskip
-#3\\
-\smallskip
-\hrule
-\smallskip
-\begin{tabularx}{\textwidth}{l|X}
-
-\itshape{Rōmaji} & #4\\
-\itshape{IPA} & {\DoulosSIL#5}\\
-\itshape{Pronunciation} & #6\\
-\itshape{Katakana} & #7\\
-\end{tabularx}
-\smallskip
-\hrule
-\medskip
-\includegraphics[height=1.3cm]{#8}
-
-\end{tcolorbox}
-\end{flashcard}
-}
-
-\newcommand{\jcardDak}[8] {
-\cardfrontstyle[\fontsize{150}{50}]{headings}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{#1}
-
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-
-\centering
-\medskip
-{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
-\medskip
-\hrule
-\smallskip
-#3\\
-\smallskip
-\hrule
-\smallskip
-\begin{tabularx}{\textwidth}{l|X}
-%\itshape{Syllabary} & #3\\
-
-\itshape{Rōmaji} & #4\\
-\itshape{IPA} & {\DoulosSIL#5}\\
-\itshape{Pronunciation} & #6\\
-\itshape{Katakana} & #7\\
-\end{tabularx}
-\smallskip
-\hrule
-\bigskip
-\includegraphics[height=1.2cm]{#8} {\raise2ex\hbox{\fontsize{30}{10}\selectfont + ゛}}
-
-\end{tcolorbox}
-\end{flashcard}
-}
-
-\newcommand{\jcardHan}[8] {
-\cardfrontstyle[\fontsize{150}{50}]{headings}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{#1}
-
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-
-\centering
-\medskip
-{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
-\medskip
-\hrule
-\smallskip
-#3\\
-\smallskip
-\hrule
-\smallskip
-\begin{tabularx}{\textwidth}{l|X}
-%\itshape{Syllabary} & #3\\
-
-\itshape{Rōmaji} & #4\\
-\itshape{IPA} & {\DoulosSIL#5}\\
-\itshape{Pronunciation} & #6\\
-\itshape{Katakana} & #7\\
-\end{tabularx}
-\smallskip
-\hrule
-\bigskip
-\includegraphics[height=1.2cm]{#8} {\raise2ex\hbox{\fontsize{30}{10}\selectfont + ゜}}
-
-\end{tcolorbox}
-\end{flashcard}
-}
-
-\newcommand{\jcardYoon}[9] {
-\cardfrontstyle[\fontsize{125}{50}]{headings}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{#1}
-
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-
-\centering
-\medskip
-{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
-\medskip
-\hrule
-\smallskip
-#3\\
-\smallskip
-\hrule
-\smallskip
-\begin{tabularx}{\textwidth}{l|X}
-%\itshape{Syllabary} & #3\\
-
-\itshape{Rōmaji} & #4\\
-\itshape{IPA} & {\DoulosSIL#5}\\
-\itshape{Pronunciation} & #6\\
-\itshape{Katakana} & #7\\
-\end{tabularx}
-\smallskip
-\hrule
-\medskip
-\includegraphics[height=.7cm]{#8}
-\\
-\smallskip
-\includegraphics[height=.7cm]{#9}
-
-\end{tcolorbox}
-\end{flashcard}
-}
-
-\newcommand{\jcardYoonDak}[9] {
-\cardfrontstyle[\fontsize{125}{50}]{headings}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{#1}
-
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-
-\centering
-\medskip
-{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
-\medskip
-\hrule
-\smallskip
-#3\\
-\smallskip
-\hrule
-\smallskip
-\begin{tabularx}{\textwidth}{l|X}
-%\itshape{Syllabary} & #3\\
-
-\itshape{Rōmaji} & #4\\
-\itshape{IPA} & {\DoulosSIL#5}\\
-\itshape{Pronunciation} & #6\\
-\itshape{Katakana} & #7\\
-\end{tabularx}
-\smallskip
-\hrule
-\medskip
-\includegraphics[height=.7cm]{#8} {\raise1.7ex\hbox{\fontsize{15}{5}\selectfont + ゛}}
-\\
-\smallskip
-\includegraphics[height=.7cm]{#9}
-
-\end{tcolorbox}
-\end{flashcard}
+\newcommand{\circledcardNb}{
+	\vspace{0.1cm}
+	\circled{\arabic{cardNb}}
+	\vspace{-0.4cm}
 }
 
 
-\newcommand{\jcardYoonHan}[9] {
-\cardfrontstyle[\fontsize{125}{50}]{headings}
-\cardbackstyle{empty}
-
-\begin{flashcard}[]{#1}
-
-\begin{tcolorbox}[
-height=6.5cm,
-boxrule=1mm,
-colframe=black!100,
-colback=white,
-sharp corners=all,
-size=small,
-width=(\linewidth)]
-
-\centering
-\medskip
-{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
-\medskip
-\hrule
-\smallskip
-#3\\
-\smallskip
-\hrule
-\smallskip
-\begin{tabularx}{\textwidth}{l|X}
-%\itshape{Syllabary} & #3\\
-
-\itshape{Rōmaji} & #4\\
-\itshape{IPA} & {\DoulosSIL#5}\\
-\itshape{Pronunciation} & #6\\
-\itshape{Katakana} & #7\\
-\end{tabularx}
-\smallskip
-\hrule
-\medskip
-\includegraphics[height=.7cm]{#8} {\raise1.7ex\hbox{\fontsize{15}{5}\selectfont + ゜}}
-\\
-\smallskip
-\includegraphics[height=.7cm]{#9}
-
-\end{tcolorbox}
-\end{flashcard}
+\newcommand{\stepnprintcardNb}{
+	\stepcounter{cardNb}\arabic{cardNb}
 }
+
+\input{commands/titleCard.tex}
+\input{commands/emptyCard.tex}
+
+\input{commands/jcardHira.tex}
+\input{commands/jcardKata.tex}
+
+\input{commands/jcardHiraDak.tex}
+\input{commands/jcardKataDak.tex}
+
+\input{commands/jcardHiraHan.tex}
+\input{commands/jcardKataHan.tex}
+
+\input{commands/jcardHiraYoon.tex}
+\input{commands/jcardKataYoon.tex}
+
+\input{commands/jcardHiraYoonDak.tex}
+\input{commands/jcardKataYoonDak.tex}
+
+\input{commands/jcardHiraYoonHan.tex}
+\input{commands/jcardKataYoonHan.tex}
 
 \newtcbox{\badge}[1][red]{
   on line, 
@@ -370,6 +105,217 @@ width=(\linewidth)]
 }
 
 \begin{document}
+
+\begin{center}
+\huge
+Japanese Flash Card
+\end{center}
+
+The bellow set of 213 flashcards is set to help memorise Japanese kana.
+
+They are divided in the following order : 
+
+\begin{itemize}
+  \item Hiragana
+  \item Katakana
+\end{itemize}
+
+Then for each category :
+
+\begin{itemize}
+  \item Gojūon
+  \item Dakuten
+  \item Handakuten
+  \item Yōon Dakuten
+  \item Yōon Handakuten
+\end{itemize}
+
+\newpage
+\begin{center}
+\huge
+Card Index (Hiragana)
+\end{center}
+
+
+
+\begin{center}
+
+\begin{tabular}{||c || P{1.7cm} | P{1.7cm} | P{1.7cm} | P{1.7cm} | P{1.7cm} || P{1.7cm} | P{1.7cm} | P{1.7cm} ||}
+\hline
+ & \multicolumn{5}{c||}{Gojūon} & \multicolumn{3}{c||}{Yōon} \\
+\hline\hline
+ & a & i & u & e & o & ya & yu & yo \\
+\hline
+\hline
+- 
+& {\#1 あ \newline a \DoulosSIL{[a]}} 
+& {\#2 い \newline i \DoulosSIL{[i]}} 
+& {\#3 う \newline u \DoulosSIL{[ɯ]}} 
+& {\#4 え \newline e \DoulosSIL{[e]}} 
+& {\#5 お \newline o \DoulosSIL{[o]}} 
+& & &
+\\
+\hline
+K 
+& {\#6 か \newline ka \DoulosSIL{[ka]}}
+& {\#7 き \newline ki \DoulosSIL{[ki]}}
+& {\#8 く \newline ku \DoulosSIL{[kɯ]}}
+& {\#9 け \newline ke \DoulosSIL{[ke]}}
+& {\#10 こ \newline ko \DoulosSIL{[ko]}}
+& {\#72 きゃ \newline kya \DoulosSIL{[kʲa]}}
+& {\#73 きゅ \newline kyu \DoulosSIL{[kʲɯ]}}
+& {\#74 きょ \newline kyo \DoulosSIL{[kʲo]}}
+\\
+\hline
+S
+& {\#11 さ \newline sa \DoulosSIL{[sa]}}
+& {\#12 し \newline shi \DoulosSIL{[ɕi]}}
+& {\#13 す \newline su \DoulosSIL{[sɯ]}}
+& {\#14 せ \newline se \DoulosSIL{[se]}}
+& {\#15 そ \newline so \DoulosSIL{[so]}}
+& {\#75 しゃ \newline sha \DoulosSIL{[ɕa]}}
+& {\#76 しゅ \newline shu \DoulosSIL{[ɕɯ]}}
+& {\#77 しょ \newline sho \DoulosSIL{[ɕo]}}
+\\
+\hline
+T
+& {\#16 た \newline ta \DoulosSIL{[ta]}}
+& {\#17 ち \newline chi \DoulosSIL{[tɕi]}}
+& {\#18 つ \newline tsu \DoulosSIL{[tsɯ]}}
+& {\#19 て \newline te \DoulosSIL{[te]}}
+& {\#20 と \newline to \DoulosSIL{[to]}}
+& {\#78 ちゃ \newline cha \DoulosSIL{[tɕa]}}
+& {\#79 ちゅ \newline chu \DoulosSIL{[tɕɯ]}}
+& {\#80 ちょ \newline cho \DoulosSIL{[tɕo]}}
+\\
+\hline
+N
+& {\#21 な \newline na \DoulosSIL{[na]}}
+& {\#22 に \newline ni \DoulosSIL{[ɲi]}}
+& {\#23 ぬ \newline nu \DoulosSIL{[nɯ]}}
+& {\#24 ね \newline ne \DoulosSIL{[ne]}}
+& {\#25 の \newline no \DoulosSIL{[no]}}
+& {\#81 にゃ \newline nya \DoulosSIL{[ɲa]}}
+& {\#82 にゅ \newline nyu \DoulosSIL{[ɲɯ]}}
+& {\#83 にょ \newline nyo \DoulosSIL{[ɲo]}}
+\\
+\hline
+H
+& {\#26 は \newline ha \DoulosSIL{[ha]} \newline wa \DoulosSIL{[wa]} as particle}
+& {\#27 ひ \newline hi \DoulosSIL{[çi]}}
+& {\#28 ふ \newline fu \DoulosSIL{[ɸɯ]}}
+& {\#29 へ \newline he \DoulosSIL{[ne]} \newline e \DoulosSIL{[e]} as particle}
+& {\#30 ほ \newline ho \DoulosSIL{[ho]}}
+& {\#84 ひゃ \newline hya \DoulosSIL{[ça]}}
+& {\#85 ひゅ \newline hyu \DoulosSIL{[çɯ]}}
+& {\#86 ひょ \newline hyo \DoulosSIL{[ço]}}
+\\
+\hline
+M
+& {\#31 ま \newline ma \DoulosSIL{[ma]}}
+& {\#32 み \newline mi \DoulosSIL{[mi]}}
+& {\#33 む \newline mu \DoulosSIL{[mɯ]}}
+& {\#34 め \newline me \DoulosSIL{[me]}}
+& {\#35 も \newline mo \DoulosSIL{[mo]}}
+& {\#87 みゃ \newline mya \DoulosSIL{[mʲa]}}
+& {\#88 みゅ \newline myu \DoulosSIL{[mʲɯ]}}
+& {\#89 みょ \newline myo \DoulosSIL{[mʲo]}}
+\\
+\hline
+Y
+& {\#36 ま \newline ya \DoulosSIL{[ja]}}
+&
+& {\#37 む \newline yu \DoulosSIL{[jɯ]}}
+&
+& {\#38 も \newline yo \DoulosSIL{[jo]}}
+& & &
+\\
+\hline
+R
+& {\#39 ら \newline ra \DoulosSIL{[ra]}}
+& {\#40 り \newline ri \DoulosSIL{[ri]}}
+& {\#41 る \newline ru \DoulosSIL{[rɯ]}}
+& {\#42 れ \newline re \DoulosSIL{[re]}}
+& {\#43 ろ \newline ro \DoulosSIL{[ro]}}
+& {\#90 りゃ \newline rya \DoulosSIL{[rʲa]}}
+& {\#91 りゅ \newline ryu \DoulosSIL{[rʲɯ]}}
+& {\#92 りょ \newline ryo \DoulosSIL{[rʲo]}}
+\\
+\hline
+W
+& {\#44 わ \newline wa \DoulosSIL{[wa]}}
+&
+&
+&
+& {\#45 を \newline wo \DoulosSIL{[o]}}
+& & &
+\\
+\hline\hline
+ & \multicolumn{5}{c||}{(Han)Dakuten} & \multicolumn{3}{c||}{Yōon with (Han)Dakuten} \\
+\hline\hline
+G
+& {\#47 が \newline ra \DoulosSIL{[ga]}}
+& {\#48 ぎ \newline gi \DoulosSIL{[gi]}}
+& {\#49 ぐ \newline gu \DoulosSIL{[gɯ]}}
+& {\#50 げ \newline ge \DoulosSIL{[ge]}}
+& {\#51 ご \newline go \DoulosSIL{[go]}}
+& {\#93 ぎゃ \newline gya \DoulosSIL{[gʲa]}}
+& {\#94 ぎゅ \newline gyu \DoulosSIL{[gʲɯ]}}
+& {\#95 ぎょ \newline gyo \DoulosSIL{[gʲo]}}
+\\
+\hline
+Z
+& {\#52 ざ \newline za \DoulosSIL{[(d)za]}}
+& {\#53 じ \newline ji \DoulosSIL{[(d)zi]}}
+& {\#54 ず \newline zu \DoulosSIL{[(d)zɯ]}}
+& {\#55 ぜ \newline ze \DoulosSIL{[(d)ze]}}
+& {\#56 ぞ \newline zo \DoulosSIL{[(d)zo]}}
+& {\#96 じゃ \newline ja \DoulosSIL{[(d)ʑa]}}
+& {\#97 じゅ \newline ju \DoulosSIL{[(d)ʑɯ]}}
+& {\#98 じょ \newline jo \DoulosSIL{[(d)ʑo]}}
+\\
+\hline
+D
+& {\#57 だ \newline da \DoulosSIL{[da]}}
+& {\#58 ぢ \newline ji \DoulosSIL{[(d)ʑi]}}
+& {\#59 づ \newline zu \DoulosSIL{[(d)zɯ]}}
+& {\#60 で \newline de \DoulosSIL{[de]}}
+& {\#61 ど \newline do \DoulosSIL{[do]}}
+& {\#99 ぢゃ \newline ja \DoulosSIL{[(d)ʑa]}}
+& {\#100 ぢゅ \newline ju \DoulosSIL{[(d)ʑɯ]}}
+& {\#101 ぢょ \newline jo \DoulosSIL{[(d)ʑo]}}
+\\
+\hline
+B
+& {\#62 ば \newline ba \DoulosSIL{[ba]}}
+& {\#63 び \newline bi \DoulosSIL{[bi]}}
+& {\#64 ぶ \newline bu \DoulosSIL{[bɯ]}}
+& {\#65 べ \newline be \DoulosSIL{[be]}}
+& {\#66 ぼ \newline bo \DoulosSIL{[bo]}}
+& {\#102 びゃ \newline bya \DoulosSIL{[bʲa]}}
+& {\#103 びゅ \newline byu \DoulosSIL{[bʲɯ]}}
+& {\#104 びょ \newline byo \DoulosSIL{[bʲo]}}
+\\
+\hline
+P
+& {\#67 ぱ \newline pa \DoulosSIL{[pa]}}
+& {\#68 ぴ \newline pi \DoulosSIL{[pi]}}
+& {\#69 ぷ \newline pu \DoulosSIL{[pɯ]}}
+& {\#70 ぺ \newline pe \DoulosSIL{[pe]}}
+& {\#71 ぺ \newline po \DoulosSIL{[po]}}
+& {\#105 ぴゃ \newline pya \DoulosSIL{[pʲa]}}
+& {\#106 ぴゅ \newline pyu \DoulosSIL{[pʲɯ]}}
+& {\#107 ぴょ \newline pyo \DoulosSIL{[pʲo]}}
+\\
+\hline
+
+
+\end{tabular}
+
+\end{center}
+
+\setcounter{cardNb}{0}
+\newpage
 
 \graphicspath{ {./hiragana/} }
 \input{hiragana.tex}

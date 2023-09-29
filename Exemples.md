@@ -36,7 +36,7 @@ If you see one missing or one which can be improoved, feel free to drop the idea
 |HO|ほ|ホ|[ho]|**Ho**t|
 |MA|ま|マ|[ma]|**Mama**|
 |MI|み|ミ|[mi]|Do Re **Mi**|
-|MU|む|ム|[mɯ]|**Moo**!|
+|MU|む|ム|[mɯ]|The cow says **Moo**!|
 |ME|め|メ|[me]|Re**me**mber|
 |MO|も|モ|[mo]|**Mo**ping|
 |YA|や|ヤ|[ja]|**Ya**k|

@@ -1,0 +1,42 @@
+\newcommand{\jcardHira}[8] {
+\cardfrontstyle[\fontsize{150}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+
+\stepcounter{cardNb}
+\circledcardNb
+
+\centering
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\medskip
+\includegraphics[height=1.3cm]{#8}
+
+\end{tcolorbox}
+\end{flashcard}
+}

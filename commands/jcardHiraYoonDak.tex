@@ -1,0 +1,44 @@
+\newcommand{\jcardHiraYoonDak}[9] {
+\cardfrontstyle[\fontsize{125}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{#1}
+
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+\stepcounter{cardNb}
+\circledcardNb
+
+\centering
+{\fontsize{40}{50}\selectfont\vphantom{あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん}#1 :#2}\\
+\medskip
+\hrule
+\smallskip
+#3\\
+\smallskip
+\hrule
+\smallskip
+\begin{tabularx}{\textwidth}{l|X}
+%\itshape{Syllabary} & #3\\
+
+\itshape{Rōmaji} & #4\\
+\itshape{IPA} & {\DoulosSIL#5}\\
+\itshape{Pronunciation} & #6\\
+\itshape{Katakana} & #7\\
+\end{tabularx}
+\smallskip
+\hrule
+\bigskip
+\includegraphics[height=.8cm]{#8} {\raise1.7ex\hbox{\fontsize{15}{5}\selectfont + ゛}}
+\hspace{0.2cm}
+\includegraphics[height=.8cm]{#9}
+
+\end{tcolorbox}
+\end{flashcard}
+}

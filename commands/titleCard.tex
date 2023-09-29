@@ -1,0 +1,32 @@
+
+\newcommand{\titleCard}[3] {
+\cardfrontstyle[\fontsize{150}{50}]{headings}
+\cardbackstyle{empty}
+
+\begin{flashcard}[]{
+\fontsize{40}{50}\selectfont
+#1
+\\
+\smallskip
+\fontsize{25}{40}\selectfont
+#2
+}
+\begin{tcolorbox}[
+height=6.5cm,
+boxrule=1mm,
+colframe=black!100,
+colback=white,
+sharp corners=all,
+size=small,
+width=(\linewidth)]
+%\stepcounter{cardNb}
+%\circledcardNb
+
+\centering
+\vspace{1.5cm}
+\fontsize{15}{50}\selectfont
+#3
+
+\end{tcolorbox}
+\end{flashcard}
+}
